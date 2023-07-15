@@ -7,13 +7,16 @@
  */
 int main(void)
 {
-	char ascNum;
+	int ascNum;
 
-	for (ascNum = '0'; ascNum <= '9'; ascNum++)
+	for (ascNum = 0; ascNum <= 9; ascNum++)
 	{
-		putchar(ascNum);
-	}
+		putchar((ascNum % 10) + '0');
+		if (ascNum == 9)
+			continue;
 	putchar(',');
 	putchar(' ');
+	}
+	putchar('\n');
 	return (0);
 }
