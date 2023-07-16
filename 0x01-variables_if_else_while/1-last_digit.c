@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- * main - Entry point to run our program, we need to check for
- * the last digit of our number
+ * main - Entry to check the last digit of a number
+ * and to check if it's greater than 5, 0 or less than 5 and not 0
  * Return: Always 0 (Success)
  */
 int main(void)
@@ -13,20 +13,22 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	lz = n % 10;
-	if (lz > 5)
+	/* your code goes there */
+	int lastDigit = n % 10;
+
+	if (lastDigit > 5)
 	{
-		printf("Last digit of %d is %d and is greater than
-				5\n", n, lz);
+		printf("Last digit of %d is %d and is greater than 5\n",
+				n, lastDigit);
 	}
-	else if (lz < 6 && lz != 0)
+	else if (lastDigit < 6 && lastDigit != 0)
 	{
-		printf("Last digit of %d is %d and is less than 6
-				and not 0", n, lz);
+		printf("Last digit of %d is %d and is less than 6 and
+				not 0", n, lastDigit);
 	}
 	else
 	{
-		printf("Last digit of %d is %d and is 0", n, lz);
+		printf("Last digit of %d is %d and is 0", n, lastDigit);
 	}
 	return (0);
 }
