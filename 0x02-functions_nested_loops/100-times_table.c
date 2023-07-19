@@ -1,7 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 
-/* main - Entry point of a function that print n times table */
+/**
+ * print_times_table - This print n times table starting from 0
+ * @n: check for n
+ * Return: void
+ */
 void print_times_table(int n)
 {
 	if (n >= 0 && n <= 15)

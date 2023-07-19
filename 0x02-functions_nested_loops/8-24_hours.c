@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * main - Entry point to print every minute of the day of
- * Jack Bauer, starting from 00:00 to 23:59
- * Return: Always 0 (Success)
+ * jack_bauer - Entry point to print every minute of the day
+ * Return: void
  */
 void jack_bauer(void)
 {

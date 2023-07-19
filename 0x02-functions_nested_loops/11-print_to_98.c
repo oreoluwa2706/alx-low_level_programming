@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * main - Entry of a function that print natural
- * numbers from n to 98
- * Return: Always 0 (Success)
+ * print_to_98 - Entry of a function that print natural
+ * @n: check for n
+ * Return: Integer
  */
 void print_to_98(int n)
 {

@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - Entry point to prin the sign of a number
- * It print + if n is greater than zero
- * print 0 if n is zero and - if n is less than zero
+ * print_sign - Entry point to prin the sign of a number
+ * @n: The character to check is n
+ * Return: print 0 if n is zero and - if n is less than zero
  */
 int print_sign(int n)
 {
