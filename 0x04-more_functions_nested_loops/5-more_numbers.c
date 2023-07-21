@@ -2,6 +2,7 @@
 
 /**
  * more_numbers - print number 0 to 14 ten times
+ * and use a new line on each iteration
  * Return: void
  */
 void more_numbers(void)
