@@ -8,18 +8,8 @@
 
 int _isupper(int c)
 {
-	char up;
+	if ((c >= 'A') && (c <= 'Z'))
+	return (1);
 
-	for (up = 'A'; up <= 'Z'; up++)
-	{
-		if (c == up)
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
-	}
 	return (0);
 }
