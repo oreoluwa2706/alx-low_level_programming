@@ -12,7 +12,7 @@ void print_number(int n)
 	if (n < 0)
 	{
 		numbe1 = -n;
-		_putchar('_');
+		_putchar('-');
 	} else
 	{
 		numbe1 = n;
