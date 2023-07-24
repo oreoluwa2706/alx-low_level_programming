@@ -1,4 +1,4 @@
-#include "main.h"
+  #include "main.h"
 
 /**
  * _atoi - function that convert a string to integer
@@ -27,7 +27,7 @@ int _atoi(char *s)
 		if (s[a] >= '0' && s[a] <= '9')
 		{
 			e_int = s[a] - '0';
-			if (d % 2)
+			if (b % 2)
 				e_int = -e_int;
 			c = c * 10 + e_int;
 			d = 1;
