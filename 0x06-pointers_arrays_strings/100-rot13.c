@@ -7,27 +7,21 @@
  */
 char *rot13(char *n)
 {
-	char *nt = n;
+	int count;
+	int j;
+	char rot1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (*nt)
+	for (count = 0; n[count] != '\0'; count++)
 	{
-		char v = *nt;
-
-		if ((v >= 'a' && v <= 'z'))
+		for (j = 0; j < 52; j++)
 		{
-			if (v + 13 <= 'z')
-				*nt = v + 13;
-			else
-				*nt = v - 13;
+			if (n[count] == rot1[j])
+			{
+				n[count] = rot13[j];
+				break;
+			}
 		}
-		else if ((v >= 'A' && v <= 'Z'))
-		{
-			if (v + 13 <= 'Z')
-				*nt = v + 13;
-			else
-				*nt = v - 13;
-		}
-		nt++;
 	}
 	return (n);
 }
