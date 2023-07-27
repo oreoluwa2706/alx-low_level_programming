@@ -7,27 +7,31 @@
  */
 char *cap_string(char *n)
 {
+	int ct, j;
+	int asc_val[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	int capital = 1;
-
-	while (*n)
+	ct = 0;
+	while (*(n + ct) != '\0')
 	{
-		if (*n == ' ' || *n == '\t' || *n == '\n' || *n == ',' ||
-				*n == ';' || *n == '.' || *n == '!' ||  *n ==
-				 '?' || *n == '"' || *n == '(' || *n == ')'
-				 || *n == '{' || *n == '}')
+		if (*(n + ct) >= 'a' && *(n + ct) <= 'z')
 		{
-			capital = 1;
+			if (ct == 0)
+			{
+				*(n + ct) = *(n + ct) - 32;
+			}
+			else
+			{
+				for (j = 0; j <= 12; j++)
+				{
+					if (asc_val[j] == *(n + ct - 1))
+					{
+						*(n + ct) = *(n + ct) - 32;
+					}
+				}
+			}
 		}
-	else if (capital)
-	{
-		if (*n >= 'a' && *n <= 'z')
-		{
-			*n = *n - 'a' + 'A';
-		}
-		capital = 0;
-	}
-	n++;
+		ct++;
 	}
 	return (n);
+
 }
