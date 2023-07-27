@@ -3,27 +3,25 @@
 /**
  * *leet - This function encodes a string into 1337
  * @n: check for this parameter
- * Return: char
+ * Return: string with changed number
  */
 char *leet(char *n)
 {
-	char *nt = n;
+	char letter[] = "aeotlAEOTL";
+	char number[] = "4307143071";
 
-	while (*nt)
+	int count;
+	int j;
+
+	for (count = 0; n[count] != '\0'; count++)
 	{
-		char v = *nt;
-
-		if (v == 'a' || v == 'A')
-			*nt = '4';
-		else if (v == 'e' || v == 'E')
-			*nt = '3';
-		else if (v == 'o' || v == 'O')
-			*nt = '0';
-		else if (v == 't' || v == 'T')
-			*nt = '7';
-		else if (v == 'l' || v == 'L')
-			*nt = '1';
-		nt++;
+		for (j = 0; j < 10; j++)
+		{
+			if (n[count] == letter[j])
+			{
+				n[count] = number[j];
+			}
+		}
 	}
 	return (n);
 }
