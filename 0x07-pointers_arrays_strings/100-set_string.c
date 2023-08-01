@@ -8,13 +8,5 @@
  */
 void set_string(char **s, char *to)
 {
-	static char buffer[MAX_STRING];
-	int i;
-
-	for (i = 0; i < MAX_STRING - 1 && to[i] != '\0'; i++)
-	{
-		buffer[i] = to[i];
-	}
-	buffer[i] = '\0';
-	*s = buffer;
+	*s = to;
 }
