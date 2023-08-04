@@ -32,13 +32,10 @@ int coChanger(int a)
 		}
 		else
 			a -= 1;
-
 		count++;
 	}
-
 	return (count);
 }
-
 /**
  * main - check for this function
  * @argc: check for this parameter
