@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * *count_word - check for this function)
+ * lenght_check - check for this function)
  * @str: check for this parameter
  * Return: int
  */
@@ -47,7 +47,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i <= len; i++)
 	{
-		if (str[i] == '\0')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
 			if (c)
 			{
