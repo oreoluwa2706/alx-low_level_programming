@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /**
- * argstostr - check for this function
+ * *argstostr - check for this function
  * @ac: check for this parameter
  * @av: check for this parameter
- * Return: 0
+ * Return: char
  */
 char *argstostr(int ac, char **av)
 {
