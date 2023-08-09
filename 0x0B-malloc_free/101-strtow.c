@@ -8,21 +8,21 @@
  */
 int lenght_check(char *str)
 {
-	int flag, c, w;
+	int i, j, k;
 
-	flag = 0;
-	w = 0;
-	for (c = 0; str[c] != '\0'; c++)
+	i = 0;
+	k = 0;
+	for (j = 0; str[j] != '\0'; j++)
 	{
-		if (str[c] == ' ')
-			flag = 0;
-		else if (flag == 0)
+		if (str[j] == ' ')
+			i = 0;
+		else if (i == 0)
 		{
-			flag = 1;
-			w++;
+			i = 1;
+			k++;
 		}
 	}
-	return (w);
+	return (k);
 }
 /**
  * **strtow - check for this function
