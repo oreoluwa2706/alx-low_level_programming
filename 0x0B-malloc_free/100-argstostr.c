@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -14,8 +13,6 @@ char *argstostr(int ac, char **av)
 	char *pt_str;
 
 	j = 0;
-	l = 0;
-
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
