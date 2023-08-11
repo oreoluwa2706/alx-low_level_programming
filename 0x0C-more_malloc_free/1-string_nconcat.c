@@ -10,33 +10,35 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *con_s1_s2;
-	unsigned int len1, len2, i, j;
+	char *s1_s2;
+	unsigned int a, b, length1, length2;
 
-	while (s1 && s1[len1])
-		len1++;
-	while (s2 && s2[len2])
-		len2++;
-	con_s1_s2 = malloc(sizeof(char) * (len1 + n + 1));
-	if (!con_s1_s2)
+	a = 0;
+	b = 0;
+	length1 = 0;
+	length2 = 0;
+	while (s1 && s1[length1])
+		length1++;
+	while (s2 && s2[length2])
+		length2++;
+	if (n < length2)
+		s1_s2 = malloc(sizeof(char) * (length1 + n + 1));
+	else
+		s1_s2 = malloc(sizeof(char) * (length1 + length2 + 1));
+
+	if (!s1_s2)
 		return (NULL);
-	if (n >= len2 && s2[j] != '\0')
-		return (s2[j]);
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	if (s1[i] != '\0' && s2[j] != '\0')
+	while (a < length1)
 	{
-		for (i = 0; i < n && s1[i] != '\0'; i++)
-		{
-			con_s1_s2[i] = s1[i];
-		}
-		for (j = 0; j < n && s2[j] != '\0'; j++)
-		{
-			con_s1_s2[len1 + i] = s2[j];
-		}
-		con_s1_s2[len1 + i] += '\0';
+		s1_s2[a] = s1[a];
+		a++;
 	}
-	return (con_s1_s2);
+	while (n < length2 && a < (length1 + n))
+	{
+		s1_s2[a++] = s2[b++];
+	}
+	while (n >= length2 && a < (length1 + length2))
+		s1_s2[a++] = s2[b++];
+	s1_s2[a] = '\0';
+	return (s1_s2);
 }
