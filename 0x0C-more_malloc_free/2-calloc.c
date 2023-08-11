@@ -18,6 +18,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
+	if (cal == NULL)
+	{
+		return (NULL);
+	}
 	if (cal != NULL)
 	{
 		for (index = 0; index < (nmemb * size); index++)
