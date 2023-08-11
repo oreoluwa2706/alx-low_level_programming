@@ -18,15 +18,10 @@ int *array_range(int min, int max)
 		return (NULL);
 	if (cal == NULL)
 		return (NULL);
-	if (cal != NULL)
+	for (index = min; index <= max; index++)
 	{
-		for (index = min; index <= max; index++)
-		{
-			cal[b] = index;
-			b++;
-		}
-		return (cal);
+		cal[b] = index;
+		b++;
 	}
-	else
-		return (NULL);
+	return (cal);
 }
