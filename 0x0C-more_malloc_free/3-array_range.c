@@ -25,6 +25,8 @@ int *array_range(int min, int max)
 			cal[b] = index;
 			b++;
 		}
+		return (cal);
 	}
-	return (cal);
+	else
+		return (NULL);
 }
