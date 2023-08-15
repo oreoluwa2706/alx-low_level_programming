@@ -1,7 +1,7 @@
 #include "dog.h"
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * *new_dog - check for this function
@@ -23,6 +23,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (newDog->name == NULL || newDog->owner == NULL)
 	{
+		free(newDog->name);
+		free(newDog->owner);
+		free(newDog);
 		return (NULL);
 	}
 	strcpy(newDog->name, name);
