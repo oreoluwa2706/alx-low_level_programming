@@ -4,7 +4,7 @@
 
 /**
  * print_numbers - check for this function
- * @seperator: check for this parameter
+ * @separator: check for this parameter
  * @n: check for this parameter
  * Return: void
  */
@@ -12,24 +12,18 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int index;
 	va_list point;
-	unsigned int print_num;
+	char *char_;
 
-	va_start(point, n);
-	print_num = va_arg(point, int);
+	if (separator == NULL || *separator == 0)
+		char_ = "";
+	else
+		char_ = (char *) separator;
 	va_start(point, n);
 
-	if (separator == NULL)
-	{
-		printf("%d", print_num);
-	}
-	if (separator && n)
-	{
-		for (index = 0; index < n; index++)
-		{
-			print_num = va_arg(point, int);
-			printf("%d%s", print_num, separator);
-		}
-	}
-	va_end(point);
+	if (n > 0)
+		printf("%d", va_arg(point, int));
+	for (index = 1; index < n; index++)
+		printf("%s%d", char_, va_arg(point, int));
 	printf("\n");
+	va_end(point);
 }
